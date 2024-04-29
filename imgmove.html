@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--image element-->
+    <img id="img" style="position: absolute;"
+        src="https://media.cnn.com/api/v1/images/stellar/prod/230327114620-michelangelo-david-re-up.jpg?c=original"
+        width="200">
+
+    <script>
+        //image location
+        var imageLocation = 1; // Initial image location
+        var direction = 1; // Initial movement direction (1: left to right, -1: right to left)
+        function moveImage() {
+            var image = document.getElementById("img");
+            // Check if the button's position reaches the rightmost edge of the window
+            if (imageLocation >= window.innerWidth - 200) {
+                direction = -1; // Change direction to move from right to left
+
+            }
+            // Check if the button's position reaches the leftmost edge of the window
+            else if (imageLocation <= 0) {
+                direction = 1;  // Change direction to move from left to right
+            }
+
+            // Move the button horizontally by incrementing or decrementing its position based on the direction
+            imageLocation += 5 * direction; // Adjust the increment value as needed
+            // Set the new position of the button
+            image.style.left = imageLocation + 'px';
+
+        }
+
+        // Set interval to move the button every 100 milliseconds
+        setInterval(moveImage, 100);
+
+
+
+    </script>
+
+</body>
+
+</html>

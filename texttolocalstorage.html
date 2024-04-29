@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dd">
+    <input type="text" id="textInput">
+    <button onclick="saveText()">save Text</button>
+</div>
+
+
+<script>
+  // Function to save the selected color to localStorage and set background color
+  function saveText() {
+            // Get the value of the text input
+            var selectedText = document.getElementById("textInput").value;
+            // Store the selected color in localStorage under the key "favoriteColor"
+            localStorage.setItem("text", selectedText);
+        }
+
+
+</script>
+
+
+</body>
+</html>

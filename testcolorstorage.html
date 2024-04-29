@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Selector</title>
+</head>
+
+<body>
+    <div id="d1">
+        <input type="color" id="colorInput"> <!-- Added an id to the color input -->
+        <button onclick="saveColor()">Save Color</button> <!-- Added the function name to the onclick attribute -->
+    </div>
+
+    <script>
+        // Function to save the selected color to localStorage and set background color
+        function saveColor() {
+            // Get the value of the color input
+            var selectedColor = document.getElementById("colorInput").value;
+            // Store the selected color in localStorage under the key "favoriteColor"
+            localStorage.setItem("favoriteColor", selectedColor);
+            // Set the background color of the body to the selected color
+            document.body.style.backgroundColor = selectedColor;
+        }
+
+        // Retrieve the stored color from localStorage and set background color
+        var storedColor = localStorage.getItem("favoriteColor");
+        // Check if a color is stored
+        if (storedColor) {
+            // Set the background color of the body to the stored color
+            document.body.style.backgroundColor = storedColor;
+        }
+    </script>
+</body>
+
+</html>

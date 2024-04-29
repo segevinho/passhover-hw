@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- Button element -->
+   <button style="position: absolute;"id="btn">hola</button>
+
+   <!-- JavaScript code -->
+   <script>
+       // Function to generate a random color
+       function getRandomColor() {
+           return '#' + Math.floor(Math.random()*16777215).toString(16);
+       }
+
+       // Function to change the color of the button
+       function changeButtonColor() {
+           var button = document.getElementById("btn");
+           button.style.backgroundColor = getRandomColor();
+       }
+
+       // Set interval to change the color every 2 seconds
+       setInterval(changeButtonColor, 2000);
+
+       
+   </script>
+
+
+</body>
+</html>

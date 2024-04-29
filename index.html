@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    User Name<input id="username">
+    <br>
+    Password<input id="password" type="password">
+    <br>
+    <div>
+        <button onclick="clickme()" id="clickme">
+            <h3> click me </h3>
+        </button>
+    </div>
+
+    <script>
+        function clickme(params) {
+            var username = document.getElementById("username").value
+            var password = document.getElementById("password").value;
+            var button = document.getElementById("clickme");
+
+            var numbers = ["1", "2", "3"]
+            console.log(numbers.length);
+
+            if (username === "segev" && password === "123") {
+                console.log("wellcome");
+                button.style.backgroundColor = "green"
+                button.style.color = "yellow"
+
+            } else {
+                console.log("false");
+                button.style.backgroundColor = "red"
+
+            }
+        }
+
+        var numbers = [1, 2, 3]
+        console.log(numbers.length);
+    </script>
+</body>
+
+</html>

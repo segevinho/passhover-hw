@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--button element-->
+    <button style="position: absolute;" id="btn"> hello </button>
+
+    <!-- javascript-->
+    <script>
+        //function for moving button//
+        var buttonLocationX = window.innerWidth - 100;
+        var buttonLocationY = window.innerHeight - 50;
+        var directionX = -1;
+        var directionY = -1;
+
+        //function moving button//
+        function moveButton() {
+            var button = document.getElementById("btn");
+
+            // Move horizontally//
+            buttonLocationX += 5 * directionX;
+            button.style.left = buttonLocationX + 'px';
+
+            buttonLocationY += 5 * directionY;
+            button.style.top = buttonLocationY + 'px';
+
+            // Reverse horizontal direction when reaching the left or right edge
+            if (buttonLocationX <= 0 || buttonLocationX >= window.innerWidth - 100) {
+                directionX *= -1;
+            }
+
+            // Reverse horizontal direction when reaching the top or bottom edge
+            if (buttonLocationY <= 0 || buttonLocationY >= window.innerHeight - 50) {
+                directionY *= -1;
+            }
+
+        }
+        setInterval(moveButton, 100);
+    </script>
+</body>
+
+</html>

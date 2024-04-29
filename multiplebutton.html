@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <!-- Button element -->
+    <button onclick="generateMultiTable()" id="b1">
+        click me to multiplication table
+    </button>
+
+        <!-- Container for the multiplication table -->
+    <div id="multiplicationTable">
+       </div>
+
+       <script>
+        function generateMultiTable() {
+            let temp = '';
+            for (let n = 1; n <= 5; n++) {
+                for (let j = 1; j <= 5; j++) {
+                    temp += (n * j) + '\t';
+                }
+                temp += '<br>'; // Add line break after each row
+            }
+            document.getElementById('multiplicationTable').innerHTML = temp;
+        }
+
+    </script>
+</body>
+
+</html>
